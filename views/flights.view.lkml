@@ -35,6 +35,7 @@ view: flights {
   dimension: destination_city {
     type: string
     sql: ${TABLE}.Destination_city ;;
+    map_layer_name: us_states
   }
 
   dimension: destination_population {
@@ -102,6 +103,20 @@ view: flights {
   dimension: origin_city {
     type: string
     sql: ${TABLE}.Origin_city ;;
+    map_layer_name: us_map
+  }
+
+  dimension: states {
+    type: string
+    sql:
+    case
+    when split(${origin_city}, ",")[offset(1)] = 'OR' then 'Oregon'
+    when split(${origin_city}, ",")[offset(1)] = 'WA' then 'Washington'
+    when split(${origin_city}, ",")[offset(1)] = 'SD' then 'South Dakota'
+    when split(${origin_city}, ",")[offset(1)] = 'TX' then 'Texas'
+    else 'Other'
+    end
+    ;;
   }
 
   dimension: origin_population {
