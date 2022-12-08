@@ -108,14 +108,17 @@ view: flights {
 
   dimension: states {
     type: string
+    # sql:
+    # case
+    # when split(${origin_city}, ",")[offset(1)] = 'OR' then 'Oregon'
+    # when split(${origin_city}, ",")[offset(1)] = 'WA' then 'Washington'
+    # when split(${origin_city}, ",")[offset(1)] = 'SD' then 'South Dakota'
+    # when split(${origin_city}, ",")[offset(1)] = 'TX' then 'Texas'
+    # else 'Other'
+    # end
+    # ;;
     sql:
-    case
-    when split(${origin_city}, ",")[offset(1)] = 'OR' then 'Oregon'
-    when split(${origin_city}, ",")[offset(1)] = 'WA' then 'Washington'
-    when split(${origin_city}, ",")[offset(1)] = 'SD' then 'South Dakota'
-    when split(${origin_city}, ",")[offset(1)] = 'TX' then 'Texas'
-    else 'Other'
-    end
+    split(${origin_city}, ",")[offset(1)]
     ;;
     map_layer_name: us_map
   }
