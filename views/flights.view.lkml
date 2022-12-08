@@ -117,6 +117,7 @@ view: flights {
     else 'Other'
     end
     ;;
+    map_layer_name: us_map
   }
 
   dimension: origin_population {
