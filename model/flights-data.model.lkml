@@ -18,3 +18,10 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 #     sql_on: ${users.id} = ${orders.user_id} ;;
 #   }
 # }
+explore: flights {
+  label: "Flight Data"
+}
+
+map_layer: us_map{
+  url: "https://d3js.org/us-10m.v1.json"
+}
