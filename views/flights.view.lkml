@@ -131,6 +131,16 @@ view: flights {
     sql_longitude: ${dest_airport_long} ;;
   }
 
+  measure: sum_passengers {
+    type: sum
+    sql: ${passengers} ;;
+  }
+
+  measure: sum_flights {
+    type: sum
+    sql: ${flights} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
