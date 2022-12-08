@@ -24,4 +24,5 @@ explore: flights {
 
 map_layer: us_map{
   url: "https://d3js.org/us-10m.v1.json"
+  format: topojson
 }

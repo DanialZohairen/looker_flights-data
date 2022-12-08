@@ -16,6 +16,12 @@ view: flights {
     sql: ${TABLE}.Dest_airport_lat ;;
   }
 
+  dimension: flight_id {
+    primary_key: yes
+    type: string
+    sql: concat(${origin_airport},${destination_airport},${fly_date}) ;;
+  }
+
   dimension: dest_airport_long {
     type: string
     sql: ${TABLE}.Dest_airport_long ;;
