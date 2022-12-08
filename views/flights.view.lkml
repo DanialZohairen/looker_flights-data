@@ -118,9 +118,9 @@ view: flights {
     # end
     # ;;
     sql:
-    split(${origin_city}, ",")[offset(1)]
+    trim(split(${origin_city}, ",")[offset(1)])
     ;;
-    map_layer_name: us_map
+    map_layer_name: us_states
   }
 
   dimension: origin_population {
