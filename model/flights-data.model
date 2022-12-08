@@ -1,4 +1,0 @@
-connection: "iremlin-palace"
-
-# include all the views
-include: "/views/**/*.view"
